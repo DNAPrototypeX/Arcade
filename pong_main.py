@@ -46,7 +46,8 @@ def pong_main():
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
-                        sys.exit()
+                        from menu import menu_main
+                        menu_main()
                     return music_ismuted
                 if event.type == pygame.MOUSEBUTTONDOWN and mute_rect.collidepoint(mpos[0], mpos[1]):
                     if music_ismuted:
@@ -71,7 +72,8 @@ def pong_main():
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
-                        sys.exit()
+                        from menu import menu_main
+                        menu_main()
                     elif event.key == pygame.K_y:
                         pong_main()
                     elif event.key == pygame.K_n:
@@ -90,7 +92,7 @@ def pong_main():
         # --- All events are detected here
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                done = True
+                sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_w:
                     players[0].speed = -4

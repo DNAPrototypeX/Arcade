@@ -58,7 +58,8 @@ def fs_main():
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:  # pressing escape quits
-                        sys.exit()
+                        from menu import menu_main
+                        menu_main()
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     for item in difficulties:
                         if item.collidepoint(m_pos[0], m_pos[1]):
@@ -107,7 +108,8 @@ def fs_main():
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:  # pressing escape quits
-                        sys.exit()
+                        from menu import menu_main
+                        menu_main()
                     return
 
     def respawn():
@@ -121,7 +123,8 @@ def fs_main():
                     sys.exit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:  # pressing escape quits
-                        sys.exit()
+                        from menu import menu_main
+                        menu_main()
                     if event.key == pygame.K_y:
                         fs_main()
                     if event.key == pygame.K_n:
@@ -143,7 +146,7 @@ def fs_main():
         # --- All events are detected here
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                done = True
+                sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     player.going_down = False
